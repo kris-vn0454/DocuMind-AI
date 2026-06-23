@@ -1,0 +1,62 @@
+# ── Environment & Secrets ──────────────────────────────────────────────────────
+.env
+*.env
+.env.example        # contains real API key — keep off GitHub
+
+# ── Python ────────────────────────────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*.egg-info/
+dist/
+build/
+.eggs/
+
+# ── Virtual environments ───────────────────────────────────────────────────────
+.venv/
+venv/
+env/
+conda-env/
+
+# ── Data & Vector Store (auto-generated, too large for git) ───────────────────
+data/vector_store/
+data/sample_docs/
+
+# ── ML Models & Artifacts ─────────────────────────────────────────────────────
+models/
+*.bin
+*.pt
+*.pth
+*.onnx
+*.safetensors
+
+# ── MLflow ────────────────────────────────────────────────────────────────────
+mlruns/
+mlartifacts/
+
+# ── Test & Coverage output ────────────────────────────────────────────────────
+.pytest_cache/
+htmlcov/
+.coverage
+coverage.xml
+
+# ── IDE ───────────────────────────────────────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# ── OS ────────────────────────────────────────────────────────────────────────
+.DS_Store
+Thumbs.db
+
+# ── Logs ──────────────────────────────────────────────────────────────────────
+logs/
+*.log
+
+# ── Jupyter ───────────────────────────────────────────────────────────────────
+.ipynb_checkpoints/
+
+# ── Local documentation (not for repo) ────────────────────────────────────────
+*.docx
+generate_docs.py
+PROJECT_DOCUMENTATION.md

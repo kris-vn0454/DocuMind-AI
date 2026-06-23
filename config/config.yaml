@@ -1,0 +1,46 @@
+app:
+  name: "DocuMind AI"
+  version: "1.0.0"
+  description: "Enterprise Document Intelligence Platform powered by RAG and Claude"
+
+ingestion:
+  supported_formats: [".pdf", ".txt", ".docx", ".md"]
+  max_file_size_mb: 50
+
+chunking:
+  chunk_size: 512
+  chunk_overlap: 64
+  min_chunk_size: 50
+
+embeddings:
+  model: "all-MiniLM-L6-v2"
+  batch_size: 32
+  normalize: true
+  dimension: 384
+
+retrieval:
+  top_k: 5
+  score_threshold: 0.35
+
+llm:
+  model: "grok-3"
+  max_tokens: 2048
+  temperature: 0.1
+  system_prompt: |
+    You are DocuMind AI, an enterprise document intelligence assistant.
+    Your job is to answer questions accurately and concisely based on the provided document context.
+    Always cite the source document and the specific section when possible.
+    Structure your answers clearly. If the information is not found in the provided context,
+    say: "The provided documents do not contain information about this topic."
+    Never make up information that is not in the context.
+
+vector_store:
+  path: "data/vector_store"
+
+api:
+  host: "0.0.0.0"
+  port: 8000
+
+tracking:
+  experiment_name: "documind-rag-queries"
+  tracking_uri: "mlruns"
